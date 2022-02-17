@@ -51,14 +51,22 @@ layout: page
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
   <title>
-  Setup for Spreadsheet, OpenRefine, and R workshops – SFC-DC 2021
+  Setup for Python workshops – WFD-DC 2022
   </title>
 
   </head>
   <body>
     
+
+
+
+
+
+
+
     <div class="container">
       
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -70,6 +78,7 @@ layout: page
         <span class="icon-bar"></span>
       </button>
 
+      
       
       <a href="http://datacarpentry.org" class="pull-left">
         <img class="navbar-logo" src="./assets/img/dc-icon-black.svg" alt="Data Carpentry logo">
@@ -90,6 +99,12 @@ layout: page
 	
         <!--li><a href="./setup.html">Setup</a></li-->
 
+        
+        
+	
+
+	
+	
         <!--li class="dropdown">
           <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -124,8 +139,10 @@ layout: page
   </div>
 </nav>
 
+ 
 
-<h1 class="maintitle"><a href="./index.html">Workshop Overview</a>: Setup for Spreadsheets, OpenRefine, and R WFD-DC 2022 workshop</h1>
+
+<h1 class="maintitle"><a href="./index.html">Workshop Overview</a>: Setup for Python WFD-DC 2022 workshop</h1>
 
 
 
@@ -172,7 +189,7 @@ application).</p>
       <td>Linux, MacOS, Windows</td>
       <td>Program for reproducibly cleaning data.</td>
     </tr>
-    <!--tr>
+    <tr>
       <td>Python</td>
       <td>See install instructions below.</td>
       <td>&nbsp;</td>
@@ -230,133 +247,92 @@ is from an unidentified developer.” Click “Open Anyway” and “Yes”. Ope
   </li>
 </ul>
 
-<h3 id="r">R</h3>
-<p><strong>R</strong> and <strong>RStudio</strong> are separate downloads and installations. R is the
-underlying statistical computing environment, but using R alone is no
-fun. RStudio is a graphical integrated development environment (IDE) that makes
-using R much easier and more interactive. You need to install R before you
-install RStudio. Once installed, because RStudio is an IDE, RStudio will run R in 
-the background.  You do not need to run it separately.</p>
-
-<p>After installing both programs, 
-you will need to install the <strong><code class="language-plaintext highlighter-rouge">tidyverse</code></strong> package from within RStudio. The 
-<strong><code class="language-plaintext highlighter-rouge">tidyverse</code></strong> package is a powerful collection of data science tools within <strong>R</strong> 
-see the <a href="https://tidyverse.tidyverse.org"><strong><code class="language-plaintext highlighter-rouge">tidyverse</code></strong> website</a> for more details. 
-Follow the instructions below for your operating system, and then follow the 
-instructions to install <strong><code class="language-plaintext highlighter-rouge">tidyverse</code></strong>.</p>
-
-<h3 id="windows">Windows</h3>
-
-<h4 id="if-you-already-have-r-and-rstudio-installed">If you already have R and RStudio installed</h4>
+<h3 id="python-and-jupyter-notebooks">Python and Jupyter Notebooks</h3>
 
 <ul>
-  <li>Open RStudio, and click on “Help” &gt; “Check for updates”. If a new version is
-  available, quit RStudio, and download the latest version for RStudio.</li>
-  <li>To check which version of R you are using, start RStudio and the first thing
-that appears in the console indicates the version of R you are
-running. Alternatively, you can type <code class="language-plaintext highlighter-rouge">sessionInfo()</code>, which will also display
-which version of R you are running. Go on
-the <a href="https://cran.r-project.org/bin/windows/base/">CRAN website</a> and check
-whether a more recent version is available. If so, please download and install
-it. You can <a href="https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-UNinstall-R_003f">check here</a> for
-more information on how to remove old versions from your system if you wish to do so.</li>
+  <li><a href="http://python.org">Python</a> is a popular language for
+scientific computing, and great for general-purpose programming as
+well. For this workshop we use Python version 3.x. 
+Installing all of its scientific packages individually can be
+a bit difficult, so we recommend an all-in-one installer.
+We will use Anaconda or Miniconda.
+They both use <a href="https://conda.io/en/latest/">Conda</a>, the main difference is
+that Anaconda comes with a lot of packages pre-installed.
+With Miniconda you will need to install the required packages.
+We recommend using the Anaconda installation instructions.</li>
 </ul>
 
-<h4 id="if-you-dont-have-r-and-rstudio-installed">If you don’t have R and RStudio installed</h4>
+<blockquote class="solution">
+  <h2 id="anaconda-installation">Anaconda installation<span class="fold-unfold glyphicon glyphicon-collapse-down"></span></h2>
 
-<ul>
-  <li>Download R from
-the <a href="http://cran.r-project.org/bin/windows/base/release.htm">CRAN website</a>.</li>
-  <li>Run the <code class="language-plaintext highlighter-rouge">.exe</code> file that was just downloaded.</li>
-  <li>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download page</a>.</li>
-  <li>Under <em>Installers</em> select <strong>RStudio x.yy.zzz - Windows.
-Vista/7/8/10</strong> (where x, y, and z represent version numbers).</li>
-  <li>Double click the file to install it.</li>
-  <li>Once it’s installed, open RStudio to make sure it works and you don’t get any
-error messages.</li>
-</ul>
+  <p style="display: none;">Download and install <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a>.
+Remember to choose the installer for Python 3.x.
+Anaconda does not include the plotting package plotnine.  To install this package, open your terminal application and
+type:</p>
 
-<h3 id="macos">macOS</h3>
+  <div class="language-bash highlighter-rouge" style="display: none;"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge plotnine
+</code></pre></div>  </div>
+</blockquote>
 
-<h4 id="if-you-already-have-r-and-rstudio-installed-1">If you already have R and RStudio installed</h4>
+<blockquote class="solution">
+  <h2 id="miniconda-installation">Miniconda installation<span class="fold-unfold glyphicon glyphicon-collapse-down"></span></h2>
 
-<ul>
-  <li>Open RStudio, and click on “Help” &gt; “Check for updates”. If a new version is
-  available, quit RStudio, and download the latest version for RStudio.</li>
-  <li>To check the version of R you are using, start RStudio and the first thing
-that appears on the terminal indicates the version of R you are running. Alternatively, you can type <code class="language-plaintext highlighter-rouge">sessionInfo()</code>, which will also display which version of R you are running. Go on
-the <a href="https://cran.r-project.org/bin/macosx/">CRAN website</a> and check
-whether a more recent version is available. If so, please download and install
-it. In any case, make sure you have at least R 3.2.</li>
-</ul>
+  <p style="display: none;">Miniconda is a “light” version of Anaconda. If you install and use Miniconda
+you will also need to install the workshop packages.</p>
 
-<h4 id="if-you-dont-have-r-and-rstudio-installed-1">If you don’t have R and RStudio installed</h4>
+  <p style="display: none;">Download and install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>
+following the instructions. Remember to choose the installer for
+Python 3.x.</p>
 
-<ul>
-  <li>Download R from
-the <a href="http://cran.r-project.org/bin/macosx/">CRAN website</a>.</li>
-  <li>Select the <code class="language-plaintext highlighter-rouge">.pkg</code> file for the latest R version.</li>
-  <li>Double click on the downloaded file to install R.</li>
-  <li>It is also a good idea to install <a href="https://www.xquartz.org/">XQuartz</a> (needed
-by some packages).</li>
-  <li>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download page</a>.</li>
-  <li>Under <em>Installers</em> select <strong>RStudio x.yy.zzz - Mac OS X 10.6+ (64-bit)</strong>
-(where x, y, and z represent version numbers).</li>
-  <li>Double click the file to install RStudio.</li>
-  <li>Once it’s installed, open RStudio to make sure it works and you don’t get any
-error messages.</li>
-</ul>
+  <p style="display: none;">From your terminal application, type:</p>
+  <div class="language-bash highlighter-rouge" style="display: none;"><div class="highlight"><pre class="highlight"><code>conda list
+</code></pre></div>  </div>
 
-<h3 id="linux">Linux</h3>
+  <p style="display: none;">To install the packages we’ll be using in the workshop, type:</p>
+  <div class="language-bash highlighter-rouge" style="display: none;"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-y</span> numpy pandas matplotlib jupyter
+conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge plotnine
+</code></pre></div>  </div>
+</blockquote>
 
-<ul>
-  <li>Follow the instructions for your distribution
-from <a href="https://cloud.r-project.org/bin/linux">CRAN</a>, they provide information
-to get the most recent version of R for common distributions. For most
-distributions, you could use your package manager (e.g., for Debian/Ubuntu run
-<code class="language-plaintext highlighter-rouge">sudo apt-get install r-base</code>, and for Fedora <code class="language-plaintext highlighter-rouge">sudo yum install R</code>), but we
-don’t recommend this approach as the versions provided by this approach are
-usually out of date. In any case, make sure you have at least R 3.2.</li>
-  <li>Go to the
-<a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download page</a>.</li>
-  <li>Under <em>Installers</em> select the version that matches your distribution, and
-install it with your preferred method (e.g., with Debian/Ubuntu <code class="language-plaintext highlighter-rouge">sudo dpkg -i
-rstudio-x.yy.zzz-amd64.deb</code> at the terminal).</li>
-  <li>Once it’s installed, open RStudio to make sure it works and you don’t get any
-error messages.</li>
-</ul>
+<p>After installing either Anaconda or Miniconda and the workshop packages,
+launch a Jupyter notebook by typing this command from the terminal:</p>
 
-<h3 id="for-everyone">For everyone</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div></div>
 
-<p><strong>After installing R and RStudio, you need to install the <code class="language-plaintext highlighter-rouge">tidyverse</code> package.</strong></p>
+<p>The notebook should open automatically in your browser. If it does not or you
+wish to use a different browser, open this link: <a href="http://localhost:8888">http://localhost:8888</a>.</p>
 
+<p>For a brief introduction to Jupyter Notebooks, please consult our
+<a href="https://datacarpentry.org/python-ecology-lesson/jupyter_notebooks/">Introduction to Jupyter Notebooks</a> page.</p>
+
+<!--h2 id="sql">SQL</h2>
 <ul>
   <li>
-    <p>After starting RStudio, at the console type:
-<code class="language-plaintext highlighter-rouge">install.packages("tidyverse")</code></p>
+    <p>SQL is a specialized programming language used with databases.  We
+use a simple database manager called <a href="http://www.sqlite.org/">SQLite</a>
+in our lessons. We will use the <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> program,
+which is available for all major platforms.</p>
   </li>
   <li>
-    <p>For reference, the lesson uses <code class="language-plaintext highlighter-rouge">SAFI_clean.csv</code>. The direct download link for
-this file is: <a href="https://ndownloader.figshare.com/files/11492171">https://ndownloader.figshare.com/files/11492171</a>. To download
-from <code class="language-plaintext highlighter-rouge">R</code>:</p>
+    <p>To install the DB Browser, go to their <a href="http://sqlitebrowser.org/dl/">download page</a> and choose the correct installer for 
+your operating system. Once the installer is downloaded, double click on it (you may need to open your Downloads folder), follow
+any other instructions that appear, and
+DB Browser should install. After installing, you can delete the installer <code class="language-plaintext highlighter-rouge">.dmg</code> file.</p>
   </li>
-</ul>
+</ul-->
 
-<p><code class="language-plaintext highlighter-rouge">{r, eval=TRUE,  message=FALSE, purl=FALSE}
-download.file("https://ndownloader.figshare.com/files/11492171",
-              "data/SAFI_clean.csv", mode = "wb")
-</code></p>
-
-<ul>
-  <li>The <a href="https://datacarpentry.org/r-socialsci/05-json/index.html">json episode</a> uses 
-<code class="language-plaintext highlighter-rouge">SAFI.json</code>. The downlink link is <a href="https://datacarpentry.org/r-socialsci/data/SAFI.json">https://datacarpentry.org/r-socialsci/data/SAFI.json</a>.</li>
-</ul>
-
-</article>
-      
 <p>Congratulations! You are now ready for the workshop!</p>
 
 </article>
+
+
+      
+      
+
+
+
+
 
 
 <footer>
@@ -392,3 +368,104 @@ download.file("https://ndownloader.figshare.com/files/11492171",
 
       
     </div>
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  
+
+<script>mendeleyWebImporter = {
+  downloadPdfs(t) { return this._call('downloadPdfs', [t]); },
+  open() { return this._call('open', []); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.8414882767930423', methodName, methodArgs }, 'https://datacarpentry.org');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body><style id="stylus-1" type="text/css" class="stylus">div[data-testid="tweetPhoto"]:not([aria-label="Image"]) {
+    margin: 0 !important;
+}
+div[data-testid="tweetPhoto"]:not([aria-label="Image"]):hover::after {
+    content: attr(aria-label);
+    width: 95%;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+div[data-testid="tweetPhoto"]:not([aria-label="Image"]):after {
+    width: 20px;
+    content: 'Alt';
+    text-align: center;
+    background: rgba(0,0,0,.75);
+    color: DodgerBlue;
+    font-size: 12px;
+}
+
+/* Swaps state, so alt-text is visible except on hover.
+div[data-testid="tweetPhoto"]:not([aria-label="Image"]):after {
+    content: attr(aria-label);
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    padding: 10px;
+    font-family: sans-serif;
+}
+div[data-testid="tweetPhoto"]:not([aria-label="Image"]):hover::after {
+    content: '';
+    background: rgba(0,0,0,0);
+}
+*/
+
+/*
+<div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image: url(&quot;https://pbs.twimg.com/media/EvEExR8WQAghMrD?format=png&amp;name=medium&quot;);"></div>
+img[class="css-9pa8cd"]:not([aria-label="Image"]) {
+    margin: 0 !important;
+}
+img[class="css-9pa8cd"]:not([aria-label="Image"]):hover::after {
+    content: attr(alt);
+    width: 95%;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+img[class="css-9pa8cd"]:not([aria-label="Image"]):after {
+    width: 20px;
+    content: "alt";
+    text-align: center;
+    background: rgba(0,0,0,.75);
+    color: DodgerBlue;
+    font-size: 12px;
+}
+*/</style></html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
